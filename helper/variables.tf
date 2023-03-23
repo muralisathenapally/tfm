@@ -1,7 +1,7 @@
-variable "projects" {
-  description = "Projects list to add the IAM policies/bindings"
-  default     = []
-  type        = list(string)
+variable "bindings" {
+  description = "Map of role (key) and list of members (value) to add the IAM policies/bindings"
+  type        = map(list(string))
+  default     = {}
 }
 
 variable "mode" {
@@ -10,10 +10,9 @@ variable "mode" {
   default     = "additive"
 }
 
-variable "bindings" {
-  description = "Map of role (key) and list of members (value) to add the IAM policies/bindings"
-  type        = map(list(string))
-  default     = {}
+variable "entities" {
+  description = "Entities list to add the IAM policies/bindings"
+  type        = list(string)
 }
 
 variable "conditional_bindings" {
@@ -25,5 +24,6 @@ variable "conditional_bindings" {
     expression  = string
     members     = list(string)
   }))
-  default = []
+  default = [
+  ]
 }
