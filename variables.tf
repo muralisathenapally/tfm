@@ -11,8 +11,10 @@ variable "topic_labels" {
   type        = map(string)
 }
 
-variable "deletion_policy" {
-  description = "The deletion policy for the Pub/Sub topic"
-  type        = string
-  default     = "NEVER"
+variable "pubsub_permission" {
+  description = "pubsub iam role to grant to members on the topic being created"
+}
+variable "members" {
+  description = "members list to grant access on topic level"
+  type        = list(string)
 }
