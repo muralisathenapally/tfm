@@ -1,11 +1,10 @@
 variable "name" {
   description = "name of the api key"
-
 }
 variable "display_name" {
   description = "description for the key"
 }
-variable "project" {
+variable "project_id" {
   description = "project id"
 }
 variable "api_targets" {
