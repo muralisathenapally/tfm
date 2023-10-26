@@ -7,5 +7,8 @@ resource "google_apikeys_key" "primary" {
     api_targets {
       service = var.api_targets
     }
+    browser_key_restrictions {
+      allowed_referrers = var.allowed_referrers
+    }
   }
 }
