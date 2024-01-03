@@ -9,12 +9,12 @@ provider "googleworkspace" {
 module "grp_members" {
   source = "../"
   group_members_assignments = {
-    member1 = {
+    "member1" = {
       group_id       = "mygroupid"
       member_email        = "sales@example.com"
       member_role = "MEMBER"
     },
-    member2 = {
+    "member2" = {
       group_id       = "mygroupid"
       member_email        = "sales@example.com"
       member_role = "MEMBER"

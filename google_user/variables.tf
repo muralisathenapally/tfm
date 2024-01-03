@@ -1,0 +1,1 @@
+variable "googleworkspace_users" {}
