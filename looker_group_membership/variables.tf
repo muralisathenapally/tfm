@@ -1,1 +1,0 @@
-variable "looker_groups_membership" {}
