@@ -7,7 +7,7 @@ terraform {
   }
 }
 
-# Create Looker users for each entry in the 'users' list
+## Create Looker users for each entry in the 'users' list
 resource "looker_user" "user" {
   for_each   = { for user in var.users : user.email => user }
   email      = each.value.email
@@ -15,7 +15,7 @@ resource "looker_user" "user" {
   last_name  = each.value.last_name
 }
 
-# Create a local that collects user IDs with their corresponding group memberships
+## Create a local that collects user IDs with their corresponding group memberships
 locals {
   group_memberships = flatten([
     for user in var.users : [
@@ -27,7 +27,7 @@ locals {
   ])
 }
 
-# Create Looker group memberships based on the created users
+## Create Looker group memberships based on the created users
 resource "looker_group_membership" "group_membership" {
   for_each = {
     for membership in local.group_memberships :
