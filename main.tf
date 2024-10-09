@@ -16,7 +16,7 @@ resource "looker_user" "user" {
   email               = each.value.email
   first_name          = each.value.first_name
   last_name           = each.value.last_name
-  already_exists_ok   = each.value.already_exists_ok
+  already_exists_ok   = each.value.already_exists
   send_password_reset = false
 
   lifecycle {
